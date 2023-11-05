@@ -4,6 +4,12 @@ jobs:
   repo-name:
     env:
       APPLICATION: '${{github.event.repository.name}}'
+      DBUSERNAME: $APPLICATION-ci
+      DBPASSWORD: action-ci
+      DBNAME: action-ci
+      DBHOST: 127.0.0.1
+      FILESDIR: files
+     
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -11,5 +17,5 @@ jobs:
     steps:
      - name: $APPLICATION
        run: |
-        echo  $APPLICATION
+        echo  $DBUSERNAME
      
