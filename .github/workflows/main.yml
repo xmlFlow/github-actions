@@ -9,7 +9,7 @@ jobs:
       matrix:
           REPO: [ "${{ github.event.repository.name }}"]
     steps:
-     - name: "echo REpo name "
+     - name: $APPLICATION
        run: |
         echo  $APPLICATION
      
