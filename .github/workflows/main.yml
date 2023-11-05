@@ -2,6 +2,8 @@ name: environment variables
 on: push
 jobs:
   repo-name:
+    env:
+      APPLICATION: '${{github.event.repository.name}}'
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -9,5 +11,5 @@ jobs:
     steps:
      - name: "echo REpo name "
        run: |
-        echo ${{env.REPO}}
+        echo $APPLICATION
      
