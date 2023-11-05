@@ -2,10 +2,12 @@ name: environment variables
 on: push
 jobs:
   repo-name:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
         REPO: [ "${{ github.event.repository.name }}"]
     steps:
     - name: "echo REpo name "
-      run: echo ${{env.REPO}}
+      run: |
+        echo ${{env.REPO}}
+     shell: bash   
+      
